@@ -8,7 +8,11 @@
     <property name="report.dir"     value="${build.dir}/junitreport"/>
 
     <property name="main-class"     value="oata.Helloworld"/>
+    <property name="lib.dir"        value="lib"/>
 
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="**/*.jar"/>
+    </path>
 
     <target name="clean">
         <delete dir="${build.dir}"/>
@@ -34,6 +38,7 @@
         <java fork="true" classname="${main-class}">
             <classpath>
                 <path refid="classpath"/>
+                <path location="${jar.dir}/${Helloworld}.jar">
                 <path refid="application"/>
             </classpath>
         </java>
