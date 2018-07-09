@@ -38,7 +38,7 @@
         <java fork="true" classname="${main-class}">
             <classpath>
                 <path refid="classpath"/>
-                <path location="${jar.dir}/${Helloworld}.jar">
+                <path location="${jar.dir}/${Helloworld}.jar"/>
                 <path refid="application"/>
             </classpath>
         </java>
