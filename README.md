@@ -24,7 +24,7 @@ program I wrote above, I followed this informative tutorial: https://ant.apache.
       
       javac -sourcepath src -d build\classes src\oata\Helloworld.java
       
-      java -cp build\classes Helloworld
+      java -cp build\classes oata.Helloworld
       
    (at this point, we see an output "Hello World! :D" and the Helloworld class file is placed in helloworldtest\build\classes)
       
