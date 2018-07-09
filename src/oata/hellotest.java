@@ -2,7 +2,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.fail;
 
-public class HelloWorldTest {
+public class hellotest {
 
     @Test
     public void testNothing() {
