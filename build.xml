@@ -3,7 +3,7 @@
     <property name="src.dir"        value="src"/>
     
     <property name="build.dir"      value="build\">
-    <!--The ${ } notation refers to a referenced property name-->
+    <!-- The ${ } notation refers to a referenced property name -->
     <property name="classes.dir"    value="${build.dir}/classes"/>
     <property name="jar.dir"        value="${build.dir}/jar"/>
     <!--incudes report--->
@@ -22,7 +22,7 @@
         <javac srcdir="${src.dir}" destdir="${classes.dir}"/>
     </target>
 
-    <!--Makes jar file -->
+    <!-- Makes jar file -->
     <target name="jar"              depends="compile">
         <mkdir dir="${jar.dir}"/>
         <jar destfile="${jar.dir}/${Helloworld}.jar" basedir="${classes.dir}">
@@ -32,10 +32,10 @@
         </jar>
     </target>
 
-    <!-- Added the following to make junit testing work-->
+    <!-- Added the following to make junit testing work -->
     <path id="application" location="${jar.dir}/${Helloworld}.jar"/>
 
-    <!--Run the jar file (made it work for junit)-->
+    <!-- Run the jar file (made it work for junit) -->
     <target name="run"              depends="jar">
         <java fork="true" classname="${main-class}">
             <classpath>
@@ -44,9 +44,10 @@
         </java>
     </target>
     
-    <!-- Showing testing instructions for JUnit within buildfile-->
+    <!-- Showing testing instructions for JUnit within buildfile -->
     <target name ="junit-test"      depends="jar">
-        <mkdir dir="${report.dir}"/> <!--setup report storage location-->
+        <!-- setup report storage location -->
+        <mkdir dir="${report.dir}"/> 
         <junit printsummary="yes">
             <classpath>
                 <path refid="classpath"/>
@@ -55,14 +56,14 @@
 
             <formatter type="xml"/>
 
-            <!--specify where to send report-->
+            <!-- specify where to send report -->
             <batchtest fork="yes"   todir="${report.dir}">
                 <fileset dir="${src.dir}" includes="**/*Test.java" />
             </batchtest>
         </junit>
     </target>
 
-    <!--? Log these files to something readable?-->
+    <!-- ? Log these files to something readable? -->
     <target name="junitreport">
         <junitreport todir="${report.dir}">
             <fileset dir="${report.dir}"   includes="TEST-*.xml"/>
