@@ -50,6 +50,9 @@
             <classpath>
                 <path refid="classpath"/>
                 <path refid="application"/>
+                <fileset dir="${lib.dir}">
+                    <include name="**/junit.jar">
+                </fileset>
             </classpath>
 
             <formatter type="xml"/>
