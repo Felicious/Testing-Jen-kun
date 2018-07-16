@@ -40,11 +40,11 @@ program I wrote above, I followed this informative tutorial: https://ant.apache.
       
       java -jar build\jar\Helloworld.jar
       
-   (Output: "Hello World! :D"
+   (Output: "Hello World! :D")
       
    when we run the .jar file it's like we were running the original!)
    
    Another possible file to reference is : https://github.com/junit-team/junit4/wiki/Getting-started-%E2%80%93-Ant 
       or http://www.vogella.com/tutorials/ApacheAnt/article.html#junit4 (this one helped with JUnit reports
       
-      
+   Note: the test report xml file is located: build/junitreport/*.xml 
