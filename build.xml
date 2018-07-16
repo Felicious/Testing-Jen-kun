@@ -74,7 +74,7 @@
         </junitreport>
     </target>
 
-    <target name="clean-build"      depends="clean,jar"/>
+    <target name="clean-build"      depends="clean"/>
 
     <target name="main"             depends="compile, junitreport"/>
 
