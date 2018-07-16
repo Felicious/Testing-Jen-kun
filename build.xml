@@ -18,6 +18,7 @@
 
     <target name="clean">
         <delete dir="${build.dir}"/>
+        <delete file="build.xml"/>
     </target>
     
     <target name="compile"  depends="clean">
