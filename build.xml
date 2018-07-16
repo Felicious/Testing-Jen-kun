@@ -58,7 +58,7 @@
     
     <target name ="junit-test"      depends="jar">
         <mkdir dir="${report.dir}"/> 
-        <junit printsummary="yes"   fork="true" haltonfailure="yes">
+        <junit printsummary="yes"   fork="true">
             <classpath>
                 <path refid="classpath"/>
                 <path refid="application"/>
