@@ -8,7 +8,7 @@ public class hellotest {
 
     @Test
     public void testNothing() {
-        system.out.println("Testing nothing~");
+        printf("Testing nothing~");
     }
 
     @Test
