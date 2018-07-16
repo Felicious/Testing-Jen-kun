@@ -12,6 +12,7 @@
 
     <path id="classpath">
         <pathelement location="${lib.dir}/junit-4.12.jar"/>
+        <pathelement location="${lib.dir}/hamcrest-core-1.3.jar"/>
         <pathelement location="${build.dir}"/>
     </path>    
 
@@ -27,6 +28,7 @@
                 <path refid="application"/>
                 <fileset dir="${lib.dir}">
                     <include name="**/junit.jar"/>
+                    <include name="**/hamcrest-core-1.3.jar"/>
                 </fileset>
             </classpath>
         </javac>
@@ -61,6 +63,7 @@
                 <path refid="application"/>
                 <fileset dir="${lib.dir}">
                     <include name="**/junit.jar"/>
+                    <include name="**/hamcrest-core-1.3.jar"/>
                 </fileset>
             </classpath>
 
