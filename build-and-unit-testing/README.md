@@ -1,5 +1,5 @@
-# Testing-Jen-kun
-Simple projects used to experiment with Jenkins. Followed Jenkins tutorial https://www.tutorialspoint.com/jenkins/
+# Building Simple Jobs and Unit Testing- Java
+Simple projects used to experiment with Jenkins build jobs and unit testing. Followed Jenkins tutorial https://www.tutorialspoint.com/jenkins/
 
 What I did with the Helloworld.java file:
 While experimented with Jenkins, I set up a build job on Jenkins and built this simple Helloworld.java file. 
@@ -40,11 +40,11 @@ program I wrote above, I followed this informative tutorial: https://ant.apache.
       
       java -jar build\jar\Helloworld.jar
       
-   (Output: "Hello World! :D"
+   (Output: "Hello World! :D")
       
    when we run the .jar file it's like we were running the original!)
    
    Another possible file to reference is : https://github.com/junit-team/junit4/wiki/Getting-started-%E2%80%93-Ant 
       or http://www.vogella.com/tutorials/ApacheAnt/article.html#junit4 (this one helped with JUnit reports
       
-      
+   Note: Configured the build with "Build Step": Invoke Ant and "Generated JUnit Test Report." The test report xml file is located: build/junitreport/*.xml 
