@@ -1,21 +1,40 @@
 # Building Simple Jobs and Unit Testing- Java
 Simple projects used to experiment with Jenkins build jobs and unit testing. Followed Jenkins tutorial https://www.tutorialspoint.com/jenkins/
 
+## Building a Simple Job
 What I did with the Helloworld.java file:
 While experimented with Jenkins, I set up a build job on Jenkins and built this simple Helloworld.java file. 
 
 To do this, I first had to 
 configure my global tool configurations from Manage Jenkins > Global Too Configuration. Make sure the git executable path is specified 
-to where your git.exe file is located in your file system (For me, it was C:\Program Files\Git\bin\git.exe) Additonally, go to Manage
-Jenkins > Configure System and scroll down until you see the "Git plugin" heading. There, input your Github username and email in order
-to have access to your own repository.
+to where your `git.exe` file is located in your file system (For me, it was `C:\Program Files\Git\bin\git.exe`) Additonally, go to Manage Jenkins > Configure System and scroll down until you see the "Git plugin" heading. There, input your Github username and email in order to have access to your own repository. If this still doesn't work, add the SSH key of your device to the Github account.
 
 I also added a JDK Installation to be able to use java and javac commands. I did this by clicking on "Add JDK Installation" and entering 
 the file path where my jdk file was located (This was C:\Progra~1\Java\jdk1.8.0_171)
 
 Then, I clicked build and the program ran without a hitch!
 
-Jenkins Unit Testing
+**Another helpful tool for building jobs is** the ability for Jenkins to build automatically at certain times. To allow for this, check 
+the box for "Build Periodically" under the large heading "Build Triggers". 
+
+For the box next to "Schedule", fill in the time you want to build the job everyday. The format is as follows:
+`minute (0-59), hour (0-23), day (1-31), month (1-12), day of the week (0-6)`
+
+  Often, however, you don't particularly care about the day, month, and week. In that case, those inputs are filled in by an asterisk (*). 
+ 
+ An example schedule for building at 4:42 PM everyday is:
+  `42 16 * * *`
+  
+ For building multiple times a day, for example at 4PM, 6PM, 8PM, and 10PM everyday, put:
+    `0 16,18,20,22 * * *`
+    
+ And finally, since I didn't want all my jobs to be built at the same time and overload my system, I used this schedule: 
+     `H H(0-7) * * *`
+     
+ This will build the job everyday at a random time between 12 AM and 7 AM when other jobs are not being built. 
+
+  
+## Jenkins Unit Testing
 
 In order to do Jenkins Unit Testing, I needed to create .xml and .jar files to properly build and run the test. Still using the Helloworld
 program I wrote above, I followed this informative tutorial: https://ant.apache.org/manual/tutorial-HelloWorldWithAnt.html 
@@ -46,5 +65,14 @@ program I wrote above, I followed this informative tutorial: https://ant.apache.
    
    Another possible file to reference is : https://github.com/junit-team/junit4/wiki/Getting-started-%E2%80%93-Ant 
       or http://www.vogella.com/tutorials/ApacheAnt/article.html#junit4 (this one helped with JUnit reports
-      
-   Note: Configured the build with "Build Step": Invoke Ant and "Generated JUnit Test Report." The test report xml file is located: build/junitreport/*.xml 
+
+## Generating a Test Report
+   Configure the build by making sure you "Invoke Ant" during the "Build Step". 
+   
+   Additionally, under "Post-Build Actions", add a post-build action and select "Publish JUnit Test Result Report." Make sure you 
+   specify clearly where the report is located, or you will get an error. 
+   
+   For my Test Report XMLs, I filled in: `build-and-unit-testing\build\junitreport\*.xml`. Make sure the * is there! It indicates that
+   is where JUnit should generate the reports and name them however they want. 
+   
+## Automated Testing
