@@ -61,12 +61,15 @@ program I wrote above, I followed this informative tutorial: https://ant.apache.
   The following are example schedules for more clarity:
  
    1. Building at 4:42 PM everyday is:
+    
     `42 16 * * *`
   
    2. For building multiple times a day, for example at 4PM, 6PM, 8PM, and 10PM everyday, put:
+    
     `0 16,18,20,22 * * *`
     
    3. And finally, since I didn't want all my jobs to be built at the same time and overload my system, I used this schedule: 
+     
      `H H(0-7) * * *`
      
  This will build the job everyday at a random time between 12 AM and 7 AM when other jobs are not being built. 
