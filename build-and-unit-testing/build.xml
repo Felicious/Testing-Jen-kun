@@ -2,7 +2,7 @@
 <project name="Helloworld"      basedir="." default="main">
     <property name="src.dir"        value="src"/>
     
-    <property name="build.dir"      value="build-and-unit-testing/build"/>
+    <property name="build.dir"      value="build"/>
     <property name="classes.dir"    value="${build.dir}/classes"/>
     <property name="jar.dir"        value="${build.dir}/jar"/>
     <property name="report.dir"     value="${build.dir}/junitreport"/>
